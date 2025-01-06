@@ -1,2 +1,2 @@
 # Numerical-Methods-UofT
-Repo the Numerical Methods course at UofT (CSC336)
+### Repo for the Numerical Methods course at UofT (CSC336)
