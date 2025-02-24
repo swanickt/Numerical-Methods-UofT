@@ -87,20 +87,20 @@ def time_numpy_multiply_experiment(n: int) -> float:
 
     # construct the random matrices 
     # Students: enter your code here
-
-    A = np.random.random((n, n)) # first matrix
-    B = np.random.random((n, n)) # second matrix
+    A = np.random.random((n, n)) # First random matrix
+    B = np.random.random((n, n)) # Second random matrix
 
     # time the NumPy matrix multiply operation
     # Students: enter your code here
 
-    # time the matrix multiply operation
+    # time the numpy matrix multiply operation
     start_time = time.perf_counter()
     C = A @ B
     stop_time = time.perf_counter()
 
     # Students: modify this return statement to return the time required
     #   by the NumPy matrix multiply operation instead of the number 42
+
     return stop_time - start_time
 
 # end of functions that use NumPy
@@ -134,3 +134,5 @@ if __name__ == '__main__':
     for i in range(len(n)):
         print('{0:4d}  {1:5.2e}  {2:5.2e} '.format(n[i], multiply_times[i][0],
                                                          multiply_times[i][1]))
+
+
