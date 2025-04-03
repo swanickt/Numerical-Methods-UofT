@@ -4,7 +4,6 @@ points = np.linspace(0, np.pi/4, 5)
 sin_points = np.sin(points)
 p_4 = np.polyfit(points, sin_points, 4)
 
-
 print(
     " --------------------------------------------------------------------")
 print(
@@ -21,12 +20,15 @@ for n in range(20):
         "| {:<11.8f} | {:<13.9} | {:<13.9} | {:<20.10e} |".
         format(x, sin_x, p4_at_x, abs(sin_x - p4_at_x)))
 print(
-    " --------------------------------------------------------------------")
+    " --------------------------------------------------------------------\n")
+
+# Determine the number of interpolation points need to achieve a maximum error of 10^(-16)
 
 m = 2
-error_bound = (1/(4*m))*( (np.pi/(4*(m-1)))**m)
+error_bound = (1/(4*m))*( (np.pi/(4*(m-1)))**m )
 
-while not (error_bound <= 1e-16):
+while not (error_bound <= 10**(-16)):
     m += 1
-    error_bound = (1 / (4 * m)) * (np.pi / (4 * (m - 1))) ** m
-print(m)
+    error_bound = (1/(4*m))*( (np.pi/(4*(m-1)))**m )
+print(f"Approximately {m} interpolation points are required to achieve a maximum error of 10^(-16)")
+
